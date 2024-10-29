@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANGAVA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">ANGAVA</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#reseñas">Reseñas</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio">
+        <div class="textos-inicio">
+          <p>
+            Descubre nuestra colección de muebles de diseño en hierro y madera,
+            piezas únicas creadas artesanalmente para adaptarse a cualquier
+            estilo. Cada mueble es fabricado con materiales de alta calidad,
+            combinando la calidez de la madera con la durabilidad del hierro.
+            Nuestro enfoque minimalista y moderno resalta la belleza de la
+            simplicidad, permitiendo que cada mueble se convierta en el punto
+            focal de cualquier espacio.
+          </p>
+          <p><strong>ANGAVA.</strong></p>
+        </div>
+      </section>
+
+      <section id="productos">
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
+            alt="Producto 1" />
+          <h3>Mesa de Centro Kyoto</h3>
+          <p>
+            Mesa de centro en hierro y madera maciza, inspirada en el estilo
+            japonés. La mezcla de líneas limpias y superficies naturales crea
+            una pieza elegante que se adapta perfectamente a un entorno moderno
+            y minimalista.
+          </p>
+          <button>Ver más</button>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxr9wF8L2vpzxJ8dRsgbToATrtAKyeARiXEA&s"
+            alt="Producto 2" />
+          <h3>Estantería Modular Zen</h3>
+          <p>
+            Una estantería versátil y minimalista hecha con una estructura de
+            hierro y estantes de madera natural. Diseñada para organizar tus
+            espacios con estilo, esta pieza es funcional y estética, perfecta
+            para cualquier habitación.
+          </p>
+          <button>Ver más</button>
+        </div>
+
+        <div class="card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMRWKiXQApVd9mqP6ziYYm594pVz2kOvgdg&s" alt="Producto 3" />
+          <h3>Banco Rústico Nórdico</h3>
+          <p>
+            Banco de hierro y madera con acabados rústicos, inspirado en el
+            diseño escandinavo. Ideal para pasillos, salas o dormitorios, es una
+            pieza que destaca por su simplicidad y elegancia natural.
+          </p>
+          <button>Ver más</button>
+        </div>
+      </section>
+
+      <section id="reseñas">
+        <div class="review">
+          <h4>Laura R</h4>
+          <p>
+            “La mesa de centro Kyoto es simplemente hermosa. Encaja
+            perfectamente con el estilo de mi sala, y la calidad es excepcional.
+            ¡Amé el detalle artesanal!”
+          </p>
+        </div>
+
+        <div class="review">
+          <h4>Diego M.</h4>
+          <p>
+            “Compré la estantería Zen y no podría estar más satisfecho. La
+            estructura es sólida y el diseño minimalista es justo lo que
+            necesitaba para mi oficina.”
+          </p>
+        </div>
+
+        <div class="review">
+          <h4>Ana P.</h4>
+          <p>
+            “El banco nórdico rústico es perfecto para mi pasillo. Es una pieza
+            que le da carácter a cualquier lugar, y el trabajo en la madera es
+            increíble. ¡Recomendado!”
+          </p>
+        </div>
+      </section>
+
+      <section id="contacto">
+        <div class="textos_contacto">
+          <h2>¿Tienes Preguntas o Necesitas Ayuda?</h2>
+          <p>
+            Nos encantaría saber de ti. Si tienes preguntas sobre nuestros
+            muebles, pedidos personalizados, o deseas conocer más sobre nuestros
+            procesos de fabricación, completa el formulario a continuación.
+            ¡Estamos aquí para ayudarte!
+          </p>
+        </div>
+        <form action="https://formspree.io/f/tu-url" method="POST">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <h2>ANGAVA</h2>
+      <p>
+        Diseñamos y creamos muebles únicos en hierro y madera, pensados para
+        transformar tus espacios.
+      </p>
+      <p>Facebook | Instagram | Pinterest</p>
+      <p>&copy; 2024 DevRosses</p>
+    </footer>
+  </body>
+</html>
