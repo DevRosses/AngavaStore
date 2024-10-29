@@ -1,6 +1,6 @@
 # Mi Proyecto Web
 
-git remote add origin
+Este es un proyecto de práctica en HTML, CSS y JavaScript, desarrollado como parte de una entrega para el curso Talento Tech / Front-end JS. La página incluye una estructura semántica, formulario de contacto, secciones de productos y reseñas, y diseño responsivo.
 
 **Características**:
 
