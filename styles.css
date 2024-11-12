@@ -39,7 +39,6 @@ nav ul {
 
 nav ul li {
   height: 100%;
-  
 }
 
 nav ul li a {
@@ -53,8 +52,8 @@ main {
 }
 
 section {
-        padding: 60px 20px;
-    }
+  padding: 60px 32px;
+}
 
 /* Inicio */
 #inicio {
@@ -86,16 +85,17 @@ section {
 /* Productos (Flexbox) */
 #productos {
   background-color: #3b3030;
-  margin-top: -120px;
+  margin-top: -160px;
   border-radius: 40px 40px 0 0;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.1);
   display: grid;
   grid-auto-flow: row;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 32px;
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  
 }
 
 /* Estilos para las Cards de Productos */
@@ -103,16 +103,17 @@ section {
   background-color: #f8ede3;
   border: 1px solid #f8ede3;
   border-radius: 16px;
-  padding: 12px;
+  padding: 24px 12px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   text-align: center;
   box-sizing: border-box;
   grid-column: span 2;
+  margin: 0 24px;
 }
 
 #productos .card img {
   border-radius: 5px;
-  width: 90%;
+  width: 70%;
   object-fit: cover;
 }
 
@@ -142,6 +143,7 @@ section {
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
   background-color: #f8ede398;
+  padding: 60px 32px;
 }
 
 /* Estilos para la Grid de Reseñas */
@@ -151,7 +153,8 @@ section {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   grid-column: span 2;
-  padding: 8px;
+  padding: 12px 36px;
+  margin: 0 24px;
 }
 
 #reseñas h4 {
@@ -161,12 +164,14 @@ section {
 #contacto {
   background-color: #3b3030;
   display: flex;
-  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
 .textos_contacto {
   color: #f8ede3;
-  width: 50%;
+  padding: 20px;
 }
 
 /* Formulario */
@@ -176,17 +181,13 @@ section {
   align-items: center;
   justify-content: space-around;
   gap: 8px;
-  width: 50%;
+  padding: 20px;
 }
 
-#contacto form input{
-height: 8%;
-
+#contacto form input {
 }
 
-#contacto form textarea{
-height: 32%;
-width: 100%;
+#contacto form textarea {
 }
 
 #contacto form button {
@@ -207,32 +208,37 @@ width: 100%;
 footer {
   grid-column: 1/-1;
   grid-row: 3/4;
-  padding: 20px;
+  padding: 12px 24px;
+  background-color: #f8ede3;
+}
+
+.texto-footer{
+  margin: 0 24px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: #f8ede3;
 }
 
 /* Responsive */
 
 /* Tablet (paisaje) */
 @media (min-width: 769px) {
-    section {
-        padding: 60px 20px;
-    }
+  section {
+    padding: 60px 20px;
+  }
 }
 
 /* Laptop */
 @media (min-width: 1025px) {
-    section {
-        padding: 80px 30px;
-    }
+  section {
+    padding: 80px 30px;
+  }
 }
 
 /* Desktop */
 @media (min-width: 1281px) {
-    section {
-        padding: 100px 40px;
-    }
+  section {
+    padding: 100px 40px;
+  }
 }
