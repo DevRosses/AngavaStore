@@ -22,30 +22,28 @@ header {
 }
 
 .logo {
-  padding: 0 20px;
+  padding: 0 12px;
 }
 
 nav {
   width: 80%;
-  margin-left: 24px;
+  padding-left: 8px;
+  gap: 8px;
 }
 nav ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 0;
   list-style-type: none;
-
-  height: 100%;
 }
 
 nav ul li {
   height: 100%;
+  
 }
 
 nav ul li a {
-  font-size: 1.2rem;
   text-decoration: none;
-  font-size: 1.2rem;
   color: inherit;
 }
 
@@ -54,10 +52,14 @@ main {
   grid-row: 2/3;
 }
 
+section {
+        padding: 60px 20px;
+    }
+
 /* Inicio */
 #inicio {
   position: relative;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -75,11 +77,10 @@ main {
   color: #f8ede3;
   display: flex;
   flex-direction: column;
-  padding: 8px 80px 0 80px;
+  padding: 0px 20px;
   font-weight: 400;
   background-color: #3b303013;
   border-radius: 40px;
-  font-size: 1.2rem;
 }
 
 /* Productos (Flexbox) */
@@ -87,13 +88,12 @@ main {
   background-color: #3b3030;
   margin-top: -120px;
   border-radius: 40px 40px 0 0;
-  padding: 120px 80px;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.1);
   display: grid;
   grid-auto-flow: row;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 12px;
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
@@ -103,7 +103,7 @@ main {
   background-color: #f8ede3;
   border: 1px solid #f8ede3;
   border-radius: 16px;
-  padding: 1em;
+  padding: 12px;
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
   text-align: center;
   box-sizing: border-box;
@@ -123,7 +123,7 @@ main {
   background-color: #00adb5;
   color: white;
   border: none;
-  padding: 0.5em 1em;
+  padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -141,7 +141,6 @@ main {
   gap: 16px;
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  padding: 80px;
   background-color: #f8ede398;
 }
 
@@ -152,7 +151,7 @@ main {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   grid-column: span 2;
-  padding: 12px;
+  padding: 8px;
 }
 
 #reseñas h4 {
@@ -161,13 +160,13 @@ main {
 /*Contacto*/
 #contacto {
   background-color: #3b3030;
-  padding: 80px;
   display: flex;
   gap: 40px;
 }
 
 .textos_contacto {
   color: #f8ede3;
+  width: 50%;
 }
 
 /* Formulario */
@@ -177,6 +176,7 @@ main {
   align-items: center;
   justify-content: space-around;
   gap: 8px;
+  width: 50%;
 }
 
 #contacto form input{
@@ -207,7 +207,7 @@ width: 100%;
 footer {
   grid-column: 1/-1;
   grid-row: 3/4;
-  padding: 8px 80px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -215,5 +215,24 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 700px) {
+
+/* Tablet (paisaje) */
+@media (min-width: 769px) {
+    section {
+        padding: 60px 20px;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1025px) {
+    section {
+        padding: 80px 30px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1281px) {
+    section {
+        padding: 100px 40px;
+    }
 }
