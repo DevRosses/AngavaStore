@@ -24,13 +24,17 @@
 
     <main>
       <section id="inicio">
+          <video autoplay loop muted playsinline class="background-video">
+    <source src="./imagenes/video/bienvenida2.mp4" type="video/mp4">
+    Tu navegador no soporta el video.
+  </video>
         <div class="textos-inicio">
           <p>
-            Descubre nuestra colección de muebles de diseño en hierro y madera,
+            Descubre nuestra colección de muebles de diseño,
             piezas únicas creadas artesanalmente para adaptarse a cualquier
-            estilo. Cada mueble es fabricado con materiales de alta calidad,
-            combinando la calidez de la madera con la durabilidad del hierro.
-            Nuestro enfoque minimalista y moderno resalta la belleza de la
+            estilo. 
+            Combinando la calidez de la madera con la durabilidad del hierro.
+            Minimalista y moderno resalta la belleza de la
             simplicidad, permitiendo que cada mueble se convierta en el punto
             focal de cualquier espacio.
           </p>
@@ -39,6 +43,7 @@
       </section>
 
       <section id="productos">
+
         <div class="card">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
@@ -77,7 +82,24 @@
           </p>
           <button>Ver más</button>
         </div>
+
+                <div class="card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
+            alt="Producto 1" />
+          <h3>Mesa de Centro Kyoto</h3>
+          <p>
+            Mesa de centro en hierro y madera maciza, inspirada en el estilo
+            japonés. La mezcla de líneas limpias y superficies naturales crea
+            una pieza elegante que se adapta perfectamente a un entorno moderno
+            y minimalista.
+          </p>
+          <button>Ver más</button>
+        </div>
+
       </section>
+
+      
 
       <section id="reseñas">
         <div class="review">
@@ -108,7 +130,7 @@
         </div>
       </section>
 
-      <section id="contacto">
+            <section id="contacto">
         <div class="textos_contacto">
           <h2>¿Tienes Preguntas o Necesitas Ayuda?</h2>
           <p>
@@ -119,18 +141,15 @@
           </p>
         </div>
         <form action="https://formspree.io/f/tu-url" method="POST">
-          <label for="name">Nombre:</label>
-          <input type="text" id="name" name="name" required />
+          <input type="text" id="name" name="name" required placeholder="Nombre" />
+          <input type="email" id="email" name="email" required placeholder="Mail"/>
 
-          <label for="email">Correo Electrónico:</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="message">Mensaje:</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" required placeholder="Dejanos un mensaje"></textarea>
 
           <button type="submit">Enviar</button>
         </form>
       </section>
+
     </main>
 
     <footer>
