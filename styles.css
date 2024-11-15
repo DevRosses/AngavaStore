@@ -1,58 +1,69 @@
 /* Estilos Generales */
-body {
+html {
+  display: grid;
+  height: 100%;
   font-family: "Nunito Sans", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 100px auto auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Header */
 header {
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background-color: #3b3030;
-  color: #f8ede3;
+  color:#f8ede3;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
 }
 
-.logo {
-  padding: 0 12px;
+header h1 {
+  font-size: 32px;
 }
 
-nav {
-  width: 80%;
-  padding-left: 8px;
-  gap: 8px;
+.nav {
+  background-color: #3b3030;
+  position: fixed;
+  bottom: 0; 
+  z-index: 999;
+  border-radius: 24px;
+  width: 10;
 }
 nav ul {
   display: flex;
-  justify-content: space-around;
-  padding: 0;
+  align-items: center;
+  justify-content: space-evenly;
   list-style-type: none;
-}
-
-nav ul li {
-  height: 100%;
 }
 
 nav ul li a {
   text-decoration: none;
   color: inherit;
+    color: #f8ede3;
+  padding: 8px 16px;
 }
 
 main {
-  grid-column: 1/-1;
+  
+  overflow: auto;
   grid-row: 2/3;
 }
 
 section {
-  padding: 60px 32px;
+  padding: 60px 8px;
 }
 
 /* Inicio */
@@ -85,7 +96,6 @@ section {
 /* Productos (Flexbox) */
 #productos {
   background-color: #3b3030;
-  margin-top: -160px;
   border-radius: 40px 40px 0 0;
   box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.1);
   display: grid;
@@ -95,7 +105,7 @@ section {
   gap: 32px;
   grid-auto-rows: 1fr;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  
+  margin-top: -120px;
 }
 
 /* Estilos para las Cards de Productos */
@@ -109,15 +119,17 @@ section {
   box-sizing: border-box;
   grid-column: span 2;
   margin: 0 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+#productos .card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #productos .card img {
   border-radius: 5px;
   width: 70%;
   object-fit: cover;
-}
-
-#productos .card h3 {
 }
 
 #productos .card button {
@@ -127,10 +139,14 @@ section {
   padding: 8px 12px;
   border-radius: 5px;
   cursor: pointer;
+  width: 60%;
+  min-width: 200px;
 }
 
 #productos .card button:hover {
   background-color: #393e46;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
 }
 
 /* Reseñas (Grid) */
@@ -157,9 +173,6 @@ section {
   margin: 0 24px;
 }
 
-#reseñas h4 {
-}
-
 /*Contacto*/
 #contacto {
   background-color: #3b3030;
@@ -184,10 +197,11 @@ section {
   padding: 20px;
 }
 
-#contacto form input {
-}
-
+#contacto form input,
 #contacto form textarea {
+  width: 80%;
+  min-width: 200px;
+  margin-bottom: 12px;
 }
 
 #contacto form button {
@@ -198,6 +212,7 @@ section {
   border-radius: 5px;
   cursor: pointer;
   width: 60%;
+  min-width: 200px;
 }
 
 #contacto form button:hover {
@@ -206,13 +221,11 @@ section {
 
 /* Footer */
 footer {
-  grid-column: 1/-1;
-  grid-row: 3/4;
-  padding: 12px 24px;
+  padding: 0 0 80px 0;
   background-color: #f8ede3;
 }
 
-.texto-footer{
+.texto-footer {
   margin: 0 24px;
   display: flex;
   flex-direction: column;
@@ -223,22 +236,28 @@ footer {
 /* Responsive */
 
 /* Tablet (paisaje) */
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   section {
     padding: 60px 20px;
   }
 }
 
-/* Laptop */
+/* Desktop */
 @media (min-width: 1025px) {
   section {
     padding: 80px 30px;
   }
-}
 
-/* Desktop */
-@media (min-width: 1281px) {
-  section {
-    padding: 100px 40px;
+  #contacto form input,
+  #contacto form textarea {
+    width: 90%;
+    max-width: 500px;
+    margin-bottom: 12px;
+  }
+
+  #contacto form button {
+    width: 60%;
+    max-width: 300px;
+    margin-top: 12px;
   }
 }

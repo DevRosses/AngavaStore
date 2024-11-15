@@ -12,38 +12,26 @@
   <body>
     <header>
       <h1 class="logo">ANGAVA</h1>
-      <nav>
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#reseñas">Reseñas</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
     </header>
 
     <main>
       <section id="inicio">
-          <video autoplay loop muted playsinline class="background-video">
-    <source src="./imagenes/video/bienvenida2.mp4" type="video/mp4">
-    Tu navegador no soporta el video.
-  </video>
+        <video autoplay loop muted playsinline class="background-video">
+          <source src="./imagenes/video/bienvenida2.mp4" type="video/mp4" />
+          Tu navegador no soporta el video.
+        </video>
         <div class="textos-inicio">
           <p>
-            Descubre nuestra colección de muebles de diseño,
-            piezas únicas creadas artesanalmente para adaptarse a cualquier
-            estilo. 
-            Combinando la calidez de la madera con la durabilidad del hierro.
-            Minimalista y moderno resalta la belleza de la
-            simplicidad, permitiendo que cada mueble se convierta en el punto
-            focal de cualquier espacio.
+            Descubre nuestra colección de muebles de diseño, piezas únicas
+            creadas artesanalmente para adaptarse a cualquier estilo. Combinando
+            la calidez de la madera con la durabilidad del hierro. Minimalista y
+            moderno resalta la belleza de la simplicidad, permitiendo que cada
+            mueble se convierta en el punto focal de cualquier espacio.
           </p>
-          <p><strong>ANGAVA.</strong></p>
         </div>
       </section>
 
       <section id="productos">
-
         <div class="card">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
@@ -55,6 +43,7 @@
             una pieza elegante que se adapta perfectamente a un entorno moderno
             y minimalista.
           </p>
+          <p>$25.00</p>
           <button>Ver más</button>
         </div>
 
@@ -69,21 +58,25 @@
             espacios con estilo, esta pieza es funcional y estética, perfecta
             para cualquier habitación.
           </p>
+          <p>$25.00</p>
           <button>Ver más</button>
         </div>
 
         <div class="card">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMRWKiXQApVd9mqP6ziYYm594pVz2kOvgdg&s" alt="Producto 3" />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMRWKiXQApVd9mqP6ziYYm594pVz2kOvgdg&s"
+            alt="Producto 3" />
           <h3>Banco Rústico Nórdico</h3>
           <p>
             Banco de hierro y madera con acabados rústicos, inspirado en el
             diseño escandinavo. Ideal para pasillos, salas o dormitorios, es una
             pieza que destaca por su simplicidad y elegancia natural.
           </p>
+          <p>$25.00</p>
           <button>Ver más</button>
         </div>
 
-                <div class="card">
+        <div class="card">
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
             alt="Producto 1" />
@@ -94,12 +87,10 @@
             una pieza elegante que se adapta perfectamente a un entorno moderno
             y minimalista.
           </p>
+          <p>$25.00</p>
           <button>Ver más</button>
         </div>
-
       </section>
-
-      
 
       <section id="reseñas">
         <div class="review">
@@ -130,7 +121,7 @@
         </div>
       </section>
 
-            <section id="contacto">
+      <section id="contacto">
         <div class="textos_contacto">
           <h2>¿Tienes Preguntas o Necesitas Ayuda?</h2>
           <p>
@@ -141,26 +132,47 @@
           </p>
         </div>
         <form action="https://formspree.io/f/tu-url" method="POST">
-          <input type="text" id="name" name="name" required placeholder="Nombre" />
-          <input type="email" id="email" name="email" required placeholder="Mail"/>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Nombre" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Mail" />
 
-          <textarea id="message" name="message" required placeholder="Dejanos un mensaje"></textarea>
+          <textarea
+            id="message"
+            name="message"
+            required
+            placeholder="Dejanos un mensaje"></textarea>
 
           <button type="submit">Enviar</button>
         </form>
       </section>
-
+      <footer>
+        <div class="texto-footer">
+          <p>
+            Diseñamos y creamos muebles únicos en hierro y madera, pensados para
+            transformar tus espacios.
+          </p>
+          <p>Facebook | Instagram | Pinterest</p>
+          <p>&copy; 2024 DevRosses</p>
+        </div>
+      </footer>
     </main>
 
-    <footer>
-      <div class="texto-footer">
-      <p>
-        Diseñamos y creamos muebles únicos en hierro y madera, pensados para
-        transformar tus espacios.
-      </p>
-      <p>Facebook | Instagram | Pinterest</p>
-      <p>&copy; 2024 DevRosses</p>
-      </div>
-    </footer>
+    <nav class="nav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#reseñas">Reseñas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
   </body>
 </html>
