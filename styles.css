@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
-  /* Colores */
+  /*-----------> Colores <----------- */
   --black: hsl(0, 0%, 0%);
   --white: hsl(0, 0%, 100%);
   --gray: hsl(0, 0%, 55%);
   --dark-gray: hsl(0, 0%, 41%);
 
-  /* Tipografias */
+  /* ----------->  Tipografias  <-----------  */
   --text: "Alata", sans-serif;
   --titles: "Josefin Sans", sans-serif;
 }
@@ -18,7 +18,7 @@
   box-sizing: border-box;
 }
 
-/* generales */
+/* -----------> generales  <----------- */
 a {
   text-decoration: none;
 }
@@ -40,12 +40,12 @@ h2,
   display: none;
 }
 
-/* Hero */
+/* -----------> Hero <-----------  */
 
 .hero {
   background-image: url("./imagenes/fondo2.jpg");
   background-size: cover;
-  min-height: 80vh;
+  min-height: 95vh;
   padding: 2rem 3rem;
   display: flex;
   flex-direction: column;
@@ -57,13 +57,13 @@ h2,
   align-items: center;
 }
 
-/* logo header */
+/* -----------> logo header  <----------- */
 .logo {
   width: 7rem;
   color: var(--white);
 }
 
-/* boton menu y cerrar  */
+/* -----------> boton menu y cerrar  <-----------  */
 .open-menu,
 .close-menu {
   border: 0;
@@ -73,7 +73,7 @@ h2,
   cursor: pointer;
 }
 
-/* intro  */
+/* -----------> intro  <-----------  */
 .hero_content {
   flex-grow: 1;
   display: flex;
@@ -87,7 +87,7 @@ h2,
   padding: 2rem;
 }
 
-/* menu mobile abierto */
+/*----------->  menu mobile abierto  <----------- */
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -121,19 +121,23 @@ h2,
   font-size: 1.5rem;
 }
 
-/* Inicio */
+/*----------->  Inicio <-----------  */
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .inicio {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 3rem;
+  padding: 4rem 3rem;
+}
+
+.inicio img {
+  border-radius: 30% 0 40% 30%;
 }
 
 .inicio_info {
@@ -150,13 +154,13 @@ main {
   line-height: 1.8;
 }
 
-/* Productos */
+/*----------->  Productos <-----------  */
 
 .productos {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 3rem;
+  padding: 2rem 4rem;
 }
 
 .productos h2 {
@@ -211,14 +215,14 @@ main {
   transition: all 0.3s ease;
 }
 
-/* Review */
+/*----------->  Review  <----------- */
 
 .reseñas {
   display: flex;
   flex-direction: column;
   text-align: center;
-  gap: 1rem;
-  padding: 2rem 4rem;
+  gap: 2rem;
+  padding: 2rem 2rem;
 }
 
 .review h2 {
@@ -237,17 +241,18 @@ main {
   padding: 2rem 1rem;
   border-radius: 12px;
   line-height: 1.8;
+  border-radius: 0 30% 30% 30%;
 }
 
-/* Contactos */
+/* -----------> Contactos <-----------  */
 
 .contacto {
   background: var(--gray);
-  padding: 3rem 2rem;
   display: flex;
-  gap: 3rem;
-  border-radius: 12px;
-  padding: 2rem 3rem;
+  gap: 2rem;
+  border-radius: 30% 0 40% 30%;
+  padding: 5rem 3rem;
+  margin: 8% 4%;
 }
 
 .textos_contacto {
@@ -263,7 +268,7 @@ form {
   gap: 2rem;
 }
 
-/* footer */
+/* -----------> footer <-----------  */
 
 .footer {
   background-color: var(--black);
@@ -294,11 +299,14 @@ form {
   font-size: 0.75rem;
 }
 
+/*        ----------->  Break Point  <-----------              */
+
 @media screen and (min-width: 800px) {
+  /*----------->  Hero  <----------- */
   .hero {
     background-image: url(./imagenes/fondo1.jpg);
     padding: 2rem 6rem;
-   height: 90vh;
+    height: 90vh;
   }
 
   .hero_content p {
@@ -306,15 +314,15 @@ form {
     margin: 0 0 4rem 2rem;
   }
 
+  /* -----------> menu abierto  <----------- */
   .open-menu {
     display: none;
   }
 
+  /*----------->  menu desktop  <----------- */
   .desktop-menu {
     display: block;
-  
   }
-
   .desktop-menu ul {
     list-style: none;
     display: flex;
@@ -328,17 +336,19 @@ form {
     cursor: pointer;
   }
 
+  /*----------->  Inicio <-----------  */
   .inicio {
     padding: 6rem 8rem;
-display: grid;
-grid-template-columns: repeat(8, 1fr);
-grid-template-rows: 1fr 1fr 60px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr 60px;
   }
 
   .inicio > img {
-max-width: 100%;
-grid-column: 1/6;
-grid-row: 1/3;
+    max-width: 100%;
+    grid-column: 1/6;
+    grid-row: 1/3;
+    border-radius: 0;
   }
 
   .inicio_info {
@@ -346,58 +356,57 @@ grid-row: 1/3;
     grid-row: 2/4;
     background-color: var(--white);
     padding: 3rem;
-align-items: center;
+    align-items: center;
   }
 
   .inicio_info p {
-  font-size: .9rem;
-  line-height: 1.8;
-}
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
 
-.productos {
-  gap: 4rem;
-  padding: 2rem 6rem;
-}
+  /*----------->  Productos <-----------  */
+  .productos {
+    gap: 4rem;
+    padding: 2rem 6rem;
+  }
 
+  /*----------->  Review  <----------- */
+  .reseñas {
+    gap: 4rem;
+    padding: 2rem 6rem;
+  }
 
-.reseñas{
-  gap: 4rem;
-  padding: 2rem 6rem;
-}
+  /*----------->  Contactos <-----------  */
+  .contacto {
+    padding: 2rem 6rem;
+  }
 
+  /* -----------> footer <-----------  */
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem 6rem;
+    gap: 8rem;
+  }
 
-.contacto{
-  padding: 2rem 6rem;
-}
+  .footer-texto {
+    font-size: 1.2rem;
+  }
 
+  .footer-icons {
+    gap: 3rem;
+  }
 
+  .icons {
+    font-size: 1.5rem;
+    align-items: end;
+  }
 
-.footer{
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 3rem 6rem;
-  gap: 8rem;
-}
+  .copy {
+    font-size: 1rem;
+  }
 
-.footer-texto{
-  font-size: 1.2rem;
-}
-
-.footer-icons{
-  gap: 3rem;
-}
-
-.icons{
-  font-size: 1.5rem ;
-  align-items: end;
-}
-
-.copy{
-  font-size: 1rem;;
-}
-
-.logo{
-  font-size: 2rem;
-}
-
+  .logo {
+    font-size: 2rem;
+  }
 }
