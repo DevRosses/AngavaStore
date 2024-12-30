@@ -8,25 +8,30 @@
     <!-- Estilos -->
     <link rel="stylesheet" href="styles.css" />
 
-    <!-- Iconos Bootstrap -->
+    <!-- Bootstrap -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoZXmyn"
+      crossorigin="anonymous"></script>
   </head>
   <body>
-    <div class="hero">
-
+    <div class="hero" id="hero">
       <header class="header">
-
         <h2 class="logo">ANGAVA</h2>
-
         <button class="open-menu" id="open-menu">
           <i class="bi bi-list"></i>
         </button>
- 
-        
-        <div class="mobile-menu disabled" id="mobile-menu">
 
+        <div class="mobile-menu disabled" id="mobile-menu">
           <div class="mobile-menu_header">
             <h2 class="header-logo">ANGAVA</h2>
             <button class="close-menu" id="close-menu">
@@ -36,14 +41,33 @@
 
           <nav class="mobile-menu-nav">
             <ul class="nav_links">
-              <li class="nav_items"><a class="nav_link" href="#inicio">Inicio</a></li>
-              <li class="nav_items"><a class="nav_link" href="#productos">Productos</a></li>
-              <li class="nav_items"><a class="nav_link" href="#reseñas">Reseñas</a></li>
-              <li class="nav_items"><a class="nav_link" href="#contacto">Contacto</a></li>
+              <li class="nav_items">
+                <a class="nav_link" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav_items">
+                <a class="nav_link" href="#productos">Productos</a>
+              </li>
+              <li class="nav_items">
+                <a class="nav_link" href="#reseñas">Reseñas</a>
+              </li>
+              <li class="nav_items">
+                <a class="nav_link" href="#contacto">Contacto</a>
+              </li>
             </ul>
           </nav>
         </div>
-        
+
+        <div class="mobile-car disable" id="mobile-car">
+          <div class="mobile-carrito_header">
+            <h2 class="header-logo">ANGAVA</h2>
+            <button class="close-car" id="close-car">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
+          <div class="carrito">
+            <h2>Soy el carrito</h2>
+          </div>
+        </div>
 
         <nav class="desktop-menu">
           <ul>
@@ -53,18 +77,30 @@
             <li><a href="#contacto">Contacto</a></li>
           </ul>
         </nav>
-
       </header>
+    </div>
 
-      <div class="hero_content">
-        <p>SI PUEDES <br>IMAGINARLO <br>PODEMOS <br>HACERLO</p>
-      </div>
-      
+    <div class="floating-button-buy">
+      <button class="carrito-menu" id="open-car">
+        <i class="bi bi-cart3"></i>
+        <p class="cantidad-carrito">1</p>
+      </button>
+    </div>
+
+    <div class="floating-button-up">
+      <a href="#hero">
+        <button class="button-up" id="button-up">
+          <i class="bi bi-chevron-double-up"></i>
+        </button>
+      </a>
     </div>
 
     <main>
       <section class="inicio" id="inicio">
-        <img class="imagen_logo" src="./imagenes/ANGAVA_logo_no_background.png" alt="Imagen de logo" />
+        <img
+          class="imagen_logo"
+          src="./imagenes/ANGAVA_logo_no_background.png"
+          alt="Imagen de logo" />
 
         <div class="inicio_info">
           <h2>DESCUBRE NUESTRA COLECCIÓN</h2>
@@ -79,125 +115,26 @@
       </section>
 
       <section class="productos" id="productos">
-        <h2>NUESTRAS CREACIONES</h2>
+        <h2>Nuestras Creaciones</h2>
 
         <div class="productos_grid">
-          <div class="card">
+          <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
+          <div class="card1">
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
-              alt="Producto 1" />
-            <h2>Mesa de Centro Kyoto</h2>
-            <p>
-              Mesa de centro en hierro y madera maciza, inspirada en el estilo
-              japonés. La mezcla de líneas limpias y superficies naturales crea
-              una pieza elegante que se adapta perfectamente a un entorno
-              moderno y minimalista.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxr9wF8L2vpzxJ8dRsgbToATrtAKyeARiXEA&s"
-              alt="Producto 2" />
-            <h2>Estantería Modular Zen</h2>
-            <p>
-              Una estantería versátil y minimalista hecha con una estructura de
-              hierro y estantes de madera natural. Diseñada para organizar tus
-              espacios con estilo, esta pieza es funcional y estética, perfecta
-              para cualquier habitación.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMRWKiXQApVd9mqP6ziYYm594pVz2kOvgdg&s"
-              alt="Producto 3" />
-            <h2>Banco Rústico Nórdico</h2>
-            <p>
-              Banco de hierro y madera con acabados rústicos, inspirado en el
-              diseño escandinavo. Ideal para pasillos, salas o dormitorios, es
-              una pieza que destaca por su simplicidad y elegancia natural.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
-              alt="Producto 1" />
-            <h2>Mesa de Centro Kyoto</h2>
-            <p>
-              Mesa de centro en hierro y madera maciza, inspirada en el estilo
-              japonés. La mezcla de líneas limpias y superficies naturales crea
-              una pieza elegante que se adapta perfectamente a un entorno
-              moderno y minimalista.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
-              alt="Producto 1" />
-            <h2>Mesa de Centro Kyoto</h2>
-            <p>
-              Mesa de centro en hierro y madera maciza, inspirada en el estilo
-              japonés. La mezcla de líneas limpias y superficies naturales crea
-              una pieza elegante que se adapta perfectamente a un entorno
-              moderno y minimalista.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxr9wF8L2vpzxJ8dRsgbToATrtAKyeARiXEA&s"
-              alt="Producto 2" />
-            <h2>Estantería Modular Zen</h2>
-            <p>
-              Una estantería versátil y minimalista hecha con una estructura de
-              hierro y estantes de madera natural. Diseñada para organizar tus
-              espacios con estilo, esta pieza es funcional y estética, perfecta
-              para cualquier habitación.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzMRWKiXQApVd9mqP6ziYYm594pVz2kOvgdg&s"
-              alt="Producto 3" />
-            <h2>Banco Rústico Nórdico</h2>
-            <p>
-              Banco de hierro y madera con acabados rústicos, inspirado en el
-              diseño escandinavo. Ideal para pasillos, salas o dormitorios, es
-              una pieza que destaca por su simplicidad y elegancia natural.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
-          </div>
-
-          <div class="card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3vCgREKT0FT8VJoFv546PEf4-jvo-NKqXmw&s"
-              alt="Producto 1" />
-            <h2>Mesa de Centro Kyoto</h2>
-            <p>
-              Mesa de centro en hierro y madera maciza, inspirada en el estilo
-              japonés. La mezcla de líneas limpias y superficies naturales crea
-              una pieza elegante que se adapta perfectamente a un entorno
-              moderno y minimalista.
-            </p>
-            <p>$25.00</p>
-            <button>Ver más</button>
+              class="card-img-top"
+              alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">TITULO</h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+                ad ipsum iusto asperiores mollitia magnam in, doloremque
+                praesentium natus earum iure esse ipsa corporis eaque cupiditate
+                soluta id hic numquam?
+              </p>
+              <p>PRECIO</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
         </div>
       </section>
@@ -220,15 +157,6 @@
               “Compré la estantería Zen y no podría estar más satisfecho. La
               estructura es sólida y el diseño minimalista es justo lo que
               necesitaba para mi oficina.”
-            </p>
-          </div>
-
-          <div class="review">
-            <h2>Ana P.</h2>
-            <p>
-              “El banco nórdico rústico es perfecto para mi pasillo. Es una
-              pieza que le da carácter a cualquier lugar, y el trabajo en la
-              madera es increíble. ¡Recomendado!”
             </p>
           </div>
         </div>
