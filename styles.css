@@ -3,9 +3,11 @@
 :root {
   /*-----------> Colores <----------- */
   --black: hsl(0, 0%, 0%);
-  --white: hsl(0, 0%, 100%);
-  --gray: hsl(0, 0%, 55%);
   --dark-gray: hsl(0, 0%, 41%);
+  --gray: #393e46;
+  --white: #eee;
+  --primary: #00adb5;
+  --shadow: rgba(0, 0, 0, 0.2);
 
   /* ----------->  Tipografias  <-----------  */
   --text: "Alata", sans-serif;
@@ -24,8 +26,8 @@ a {
 }
 
 section {
-  gap: 1.2rem;
-  padding: 3rem 2.6rem;
+  gap: 1rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,12 +37,12 @@ section {
 p,
 button {
   font-family: var(--text);
+  margin: 0;
 }
 
 .desktop-menu {
   display: none;
 }
-
 
 /* -----------> Hero <-----------  */
 
@@ -71,11 +73,10 @@ button {
   bottom: 12px;
   left: 12px;
   cursor: pointer;
-  
 }
 
-.floating-button-buy a{
-text-decoration: none;
+.floating-button-buy a {
+  text-decoration: none;
 }
 
 .floating-button-up {
@@ -102,12 +103,55 @@ text-decoration: none;
   font-size: 24px;
 }
 
-.carrito-menu p {
+.mobile-carrito_contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-carrito {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  width: 95%;
+  border-bottom: solid 0.3px;
+  margin-top: 2rem;
+}
+
+.card-img-carrito {
+  width: 24%;
+}
+
+.mobile-carrito_texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  width: 50%;
+}
+
+.mobile-carrito_modificar {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.mobile-carrito_modificar p {
   margin: 0;
-  padding: 0 12px;
-  background-color: red;
+  padding: 0;
+  background-color: var(--white);
+  color: var(--gray);
+  padding: 1px 8px;
   border-radius: 50%;
-  font-size: 16px;
+}
+
+.agregar,
+.quitar {
+  background-color: transparent;
+  border: 0;
+  color: var(--white);
 }
 
 .button-up {
@@ -118,13 +162,21 @@ text-decoration: none;
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 0.4rem;
+  padding: 0 0.4rem;
   border-radius: 50%;
+}
+
+.carrito-menu p {
+  margin: 0;
+  padding: 0 12px;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 16px;
 }
 
 /* -----------> logo header desktop <----------- */
 .logo {
-  width: 8rem;
+  width: 12rem;
   color: var(--white);
 }
 
@@ -250,7 +302,7 @@ main {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1rem 2rem;
-  max-width: 90%;
+  max-width: 95%;
 }
 
 .inicio_info p {
@@ -267,33 +319,50 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: var(--gray);
 }
 
 .productos h2 {
   text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-.productos_grid {
+.productos-grid {
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-  gap: 0.6rem;
-  padding: 1rem 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 1rem;
 }
 
 .card1 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.6rem;
-  padding: 1rem 2rem;
-  border-radius: 2px 12px;
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-  background: var(--gray);
-  color: var(--white);
-  line-height: 1.2;
-  background-color: var(--gray);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow);
+  background-color: var(--white);
+  color: var(--gray);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.card1 img {
+  border-radius: 10px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
 .card-body {
@@ -301,12 +370,38 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  text-align: center;
 }
 
-.card1 img {
-  border-radius: 2px 12px;
-  object-fit: cover;
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--gray);
+}
+
+.card-text {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.card-body p {
+  margin: 0;
+}
+
+.card-body a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card-body a:hover {
+  background-color: darken(var(--primary), 10%);
 }
 
 /*----------->  Review  <----------- */
@@ -394,7 +489,7 @@ form {
 
 /*                                          ----------->  Break Point  <-----------              */
 
-@media screen and (min-width: 790px) {
+@media (min-width: 1024px) {
   body {
     background-color: rgba(204, 181, 181, 0.315);
   }
@@ -481,9 +576,6 @@ form {
   .reseñas {
     gap: 4rem;
     padding: 8rem 12rem;
-  }
-
-  .review {
   }
 
   /*----------->  Contactos <-----------  */
