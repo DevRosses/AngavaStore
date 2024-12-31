@@ -26,50 +26,6 @@
         <button class="open-menu" id="open-menu">
           <i class="bi bi-list"></i>
         </button>
-
-        <div class="mobile-menu disabled" id="mobile-menu">
-          <div class="mobile-menu_header">
-            <h2 class="header-logo">ANGAVA</h2>
-            <button class="close-menu" id="close-menu">
-              <i class="bi bi-x"></i>
-            </button>
-          </div>
-
-          <nav class="mobile-menu-nav">
-            <ul class="nav_links">
-              <li class="nav_items">
-                <a class="nav_link" href="#inicio">Inicio</a>
-              </li>
-              <li class="nav_items">
-                <a class="nav_link" href="#productos">Productos</a>
-              </li>
-              <li class="nav_items">
-                <a class="nav_link" href="#reseñas">Reseñas</a>
-              </li>
-              <li class="nav_items">
-                <a class="nav_link" href="#contacto">Contacto</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div class="mobile-car disabled" id="mobile-car">
-
-          <div class="mobile-carrito_header">
-            <h2 class="header-logo">ANGAVA</h2>
-            <button class="close-car" id="close-car">
-              <i class="bi bi-x"></i>
-            </button>
-          </div>
-
-          <div class="mobile-carrito_contenedor">
-
-            <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
-
-
-          </div>
-        </div>
-
         <nav class="desktop-menu">
           <ul>
             <li><a href="#inicio">Inicio</a></li>
@@ -81,8 +37,47 @@
       </header>
     </div>
 
+    <div class="mobile-menu disabled" id="mobile-menu">
+      <div class="mobile-menu_header">
+        <h2 class="header-logo">ANGAVA</h2>
+        <button class="close-menu" id="close-menu">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-menu-nav">
+        <ul class="nav_links">
+          <li class="nav_items">
+            <a class="nav_link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav_items">
+            <a class="nav_link" href="#productos">Productos</a>
+          </li>
+          <li class="nav_items">
+            <a class="nav_link" href="#reseñas">Reseñas</a>
+          </li>
+          <li class="nav_items">
+            <a class="nav_link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile-car disabled" id="mobile-car">
+      <div class="mobile-carrito_header">
+        <h2 class="header-logo">ANGAVA</h2>
+        <button class="close-car" id="close-car">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+
+      <div class="mobile-carrito_contenedor" id="mobile-carrito-contenedor">
+        <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
+      </div>
+    </div>
+
     <div class="floating-button-buy">
-      <button class="carrito-menu" id="open-car">
+      <button class="carrito-menu" id="carrito-flotante" onclick="buscarCarrito()">
         <i class="bi bi-cart3"></i>
         <p class="cantidad-carrito">1</p>
       </button>
@@ -97,7 +92,6 @@
     </div>
 
     <main>
-
       <section class="inicio" id="inicio">
         <img
           class="imagen_logo"
@@ -116,15 +110,6 @@
         </div>
       </section>
 
-
-
-
-
-
-
-
-
-      
       <section class="productos" id="productos">
         <h2>Nuestras Creaciones</h2>
 
@@ -132,23 +117,6 @@
           <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
       <section class="reseñas" id="reseñas">
         <div class="review_grid">
@@ -196,8 +164,8 @@
             id="email"
             name="email"
             required
-            placeholder="Mail" 
-            autocomplete="email"/>
+            placeholder="Mail"
+            autocomplete="email" />
 
           <textarea
             id="message"
@@ -234,6 +202,5 @@
     </main>
 
     <script src="./main.js"></script>
-    
   </body>
 </html>

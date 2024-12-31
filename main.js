@@ -4,13 +4,13 @@ let btnOpenMenu = document.getElementById("open-menu");
 
 let btnCloseMenu = document.getElementById("close-menu");
 
-let btnOpenCar = document.getElementById("open-car");
-
 let btnCloseCar = document.getElementById("close-car");
 
 let menu = document.getElementById("mobile-menu");
 
 let MenuCar = document.getElementById("mobile-car");
+
+let carritoFlotante = document.getElementById("carrito-flotante");
 
 btnOpenMenu.addEventListener("click", () => {
   menu.classList.remove("disabled");
@@ -20,41 +20,96 @@ btnCloseMenu.addEventListener("click", () => {
   menu.classList.add("disabled");
 });
 
-btnOpenCar.addEventListener("click", () => {
-  MenuCar.classList.remove("disabled");
-});
-
 btnCloseCar.addEventListener("click", () => {
   MenuCar.classList.add("disabled");
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--->> inicializar datos de productos  <<---*/
-var dataProd = [];
+carritoFlotante.addEventListener("click", () => {
+  MenuCar.classList.remove("disabled");
+});
 
 /*--->> crear cards de productos  <<---*/
 const contenedorProductos = document.querySelector("#productos-grid");
+const contenedorCarrito = document.querySelector("#mobile-carrito-contenedor");
 
+/*--->> inicializar datos de productos  <<---*/
+var dataProd = [];
+var carrito = [];
+
+/*--->> Recuperar y decodificar datos del localStorage al inicio  <<---*/
+const carritoGuardado = localStorage.getItem("carrito");
+carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
+
+/*--->> actualizar el localStorage <<---*/
+function actualizarLocalStorage() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function actualizarCarrito() {
+  contenedorCarrito.innerHTML = "";
+  buscarCarrito();
+}
+
+
+/*--->> evento de los botones  <<---*/
+function buscarCarrito() {
+  contenedorCarrito.innerHTML = "";
+
+  if (carrito.length === 0) {
+    contenedorCarrito.innerHTML = "<p>Tu carrito está vacío</p>";
+    return;
+  }
+  carrito.forEach((producto) => {
+    crearCarrito(producto);
+  });
+}
+
+function agregar(id) {
+  const productoSeleccionado = dataProd.find((producto) => producto.id === id);
+
+  if (
+    !productoSeleccionado ||
+    !productoSeleccionado.id ||
+    !productoSeleccionado.title ||
+    !productoSeleccionado.price
+  ) {
+    console.error("Producto inválido al agregar:", productoSeleccionado);
+    return;
+  }
+
+  const productoEnCarrito = carrito.find((item) => item.id === id);
+
+  if (productoEnCarrito) {
+    productoEnCarrito.cantidad = (productoEnCarrito.cantidad || 0) + 1;
+  } else {
+    carrito.push({ ...productoSeleccionado, cantidad: 1 });
+  }
+
+  actualizarLocalStorage();
+  buscarCarrito();
+}
+
+function quitar(id) {
+  const productoEnCarrito = carrito.find((item) => item.id === id);
+
+  if (productoEnCarrito) {
+    productoEnCarrito.cantidad--;
+
+    if (productoEnCarrito.cantidad <= 0) {
+      carrito = carrito.filter((item) => item.id !== id);
+    }
+
+    actualizarLocalStorage();
+    buscarCarrito();
+  }
+
+  actualizarCarrito();
+}
 function crearCard(data) {
-    const card = document.createElement("div");
-    card.classList.add("card1");
+  const card = document.createElement("div");
+  card.classList.add("card1");
 
-    card.innerHTML = `
+  card.innerHTML = `
     <img
               src="${data.image}"
               class="card-img-top"
@@ -65,44 +120,54 @@ function crearCard(data) {
                 ${data.description}
               </p>
               <p>Precio: $${data.price}</p>
-              <a href="#" class="btn btn-primary">Lo quiero!</a>
+                                  <button class="btn btn-primary" id="agregar" onclick="agregar(${data.id})">
+                    Lo quiero!
+      </button> 
             </div>
   `;
 
-    contenedorProductos.appendChild(card);
-
+  contenedorProductos.appendChild(card);
 }
 
 /*--->> crear cards del carrito <<---*/
-function crearCarrito() {
-  productos.forEach((dataCar) => {
-    const card = document.createElement("div");
-    card.classList.add("card-carrito");
+function crearCarrito(data) {
+  if (!data || !data.id || !data.title || !data.price || !data.image) {
+    console.error("Datos inválidos para el producto en el carrito:", data);
+    return;
+  }
 
-    card.innerHTML = `
-     <img
-              src="${data.imagen}"
+  const card = document.createElement("div");
+  card.classList.add("card-carrito");
+
+  card.innerHTML = `<img
+              src="${data.image}"
               class="card-img-carrito"
-              alt="${data.nombre}" />
+              alt="${data.title}" />
 
             <div class="mobile-carrito_texto">
-              <h5 class="card-title">${data.nombre}</h5>
-              <p>Precio: $${data.precio}</p>
+              <h5 class="card-title">${data.title}</h5>
+              <p>Precio: $${data.price}</p>
             </div>
 
             <div class="mobile-carrito_modificar">
-              <button class="agregar" id="agregar">
+              <button class="agregar" data-id="${data.id}">
                 <i class="bi bi-plus-circle"></i>
               </button>
-              <p>0</p>
-              <button class="quitar" id="quitar">
+              <p>${data.cantidad}</p>
+              <button class="quitar" data-id="${data.id}">
                 <i class="bi bi-x-circle"></i>
               </button>
-            </div>
-  `;
+            </div>`;
 
-    contenedorProductos.appendChild(card);
-  });
+  // Agregar eventos dinámicos a los botones de la tarjeta del carrito
+  card
+    .querySelector(".agregar")
+    .addEventListener("click", () => agregar(data.id));
+  card
+    .querySelector(".quitar")
+    .addEventListener("click", () => quitar(data.id));
+
+  contenedorCarrito.appendChild(card);
 }
 
 /*--->> Solicitamos la lista de productos <<---*/
@@ -114,9 +179,10 @@ async function buscarProductos() {
     dataProd = await respuesta.json();
 
     console.log("productos del Fetch: ", dataProd);
-    
-    dataProd.forEach((producto) => { crearCard(producto); });
-    
+
+    dataProd.forEach((producto) => {
+      crearCard(producto);
+    });
   } catch (error) {
     console.error("No se pudo encontrar información de los productos", error);
   }
