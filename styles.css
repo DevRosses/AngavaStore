@@ -95,34 +95,36 @@ button {
   border: 0;
   background: var(--gray);
   color: var(--white);
-  font-size: 2rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0.5rem;
   border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-.carrito-menu i {
-  margin: 0;
-  font-size: 24px;
+
+.carrito-menu:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0);
 }
 
+.carrito-menu p {
+color: var(--primary);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.carrito-menu p:hover {
+color: transparent;
+}
 
 /* Contenedor del carrito */
 .mobile-carrito_contenedor {
@@ -132,7 +134,7 @@ button {
   justify-content: flex-start;
   padding: 1rem;
   max-height: 400px;
-  overflow-y: auto; 
+  overflow-y: auto;
   background-color: var(--white);
   color: var(--gray);
   border-radius: 8px;
@@ -212,48 +214,6 @@ button {
   padding: 0.2rem 0.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .agregar,
 .quitar {
   background-color: transparent;
@@ -273,13 +233,49 @@ button {
   border-radius: 50%;
 }
 
-.carrito-menu p {
-  margin: 0;
-  padding: 0 12px;
-  background-color: red;
+.button-up {
+  border: 0;
+  background: var(--gray);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
   border-radius: 50%;
-  font-size: 16px;
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.2rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
+
+.carrito-menu:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* -----------> logo header desktop <----------- */
 .logo {
@@ -320,7 +316,7 @@ button {
   position: fixed;
   inset: 0;
   max-height: 70vh;
-  padding: 1rem ;
+  padding: 1rem;
   border-radius: 0 0 0 12%;
 }
 
@@ -362,7 +358,6 @@ button {
   inset: 0;
   max-height: 85vh;
   padding: 1rem 2rem;
-
 }
 
 .header-logo {

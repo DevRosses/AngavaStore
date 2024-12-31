@@ -50,6 +50,21 @@ function actualizarCarrito() {
   buscarCarrito();
 }
 
+function actualizarCantidadCarrito() {
+  const cantidadTotal = carrito.reduce(
+    (total, item) => total + item.cantidad,
+    0
+  );
+  const carritoMenu = document.querySelector(".cantidad-carrito");
+
+  if (carritoMenu) {
+    carritoMenu.textContent = cantidadTotal; 
+  }
+
+  actualizarLocalStorage();
+}
+
+
 
 /*--->> evento de los botones  <<---*/
 function buscarCarrito() {
@@ -87,6 +102,7 @@ function agregar(id) {
 
   actualizarLocalStorage();
   buscarCarrito();
+  actualizarCantidadCarrito();
 }
 
 function quitar(id) {
@@ -104,6 +120,7 @@ function quitar(id) {
   }
 
   actualizarCarrito();
+  actualizarCantidadCarrito();
 }
 function crearCard(data) {
   const card = document.createElement("div");
@@ -191,4 +208,5 @@ async function buscarProductos() {
 /*--->> Ejecutar la carga de productos <<---*/
 document.addEventListener("DOMContentLoaded", () => {
   buscarProductos();
+  actualizarCantidadCarrito();
 });
