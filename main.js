@@ -1,18 +1,14 @@
 /*--->> agrega funcionalidad a los botones <<---*/
 
-let btnOpenMenu = document.getElementById("open-menu");
-
-let btnCloseMenu = document.getElementById("close-menu");
-
-let btnCloseCar = document.getElementById("close-car");
-
-let menu = document.getElementById("mobile-menu");
-
-let MenuCar = document.getElementById("mobile-car");
-
-let carritoFlotante = document.getElementById("carrito-flotante");
-
-
+const btnOpenMenu = document.getElementById("open-menu");
+const btnCloseMenu = document.getElementById("close-menu");
+const btnCloseCar = document.getElementById("close-car");
+const menu = document.getElementById("mobile-menu");
+const MenuCar = document.getElementById("mobile-car");
+const carritoFlotante = document.getElementById("carrito-flotante");
+const btnBuy = document.getElementById("floating-button");
+const totalPrecioElemento = document.getElementById("total-precio");
+const btnFinalizarCompra = document.getElementById("finalizar-compra");
 
 btnOpenMenu.addEventListener("click", () => {
   menu.classList.remove("disabled");
@@ -45,6 +41,15 @@ carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 function cerrarMenu() {
   menu.classList.add("disabled");
 }
+
+function cerrarBtnCarrito() {
+  btnBuy.classList.add("disabled");
+}
+
+function abrirBtnCarrito() {
+  btnBuy.classList.remove("disabled");
+}
+
 /*--->> actualizar el localStorage <<---*/
 function actualizarLocalStorage() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -60,16 +65,57 @@ function actualizarCantidadCarrito() {
     (total, item) => total + item.cantidad,
     0
   );
+
   const carritoMenu = document.querySelector(".cantidad-carrito");
 
   if (carritoMenu) {
-    carritoMenu.textContent = cantidadTotal; 
+    carritoMenu.textContent = cantidadTotal;
   }
-
-  actualizarLocalStorage();
 }
 
+// calcular el total del carrito
+function calcularTotal() {
+  return carrito.reduce(
+    (total, producto) => total + producto.price * producto.cantidad,
+    0
+  );
+}
 
+// Actualizar el total en el DOM
+function mostrarTotal() {
+  const total = calcularTotal();
+  totalPrecioElemento.textContent = total.toFixed(2); // Mostrar con dos decimales
+}
+
+// redirigir a WhatsApp
+function finalizarCompra() {
+  if (carrito.length === 0) {
+    alert("Tu carrito está vacío.");
+    return;
+  }
+
+  const total = calcularTotal();
+  const resumenProductos = carrito
+    .map(
+      (producto) =>
+        `- ${producto.title}: $${producto.price} x ${producto.cantidad} = $${(
+          producto.price * producto.cantidad
+        ).toFixed(2)}`
+    )
+    .join("\n");
+
+  const mensaje = encodeURIComponent(
+    `Hola, me interesa realizar el siguiente pedido:\n\n${resumenProductos}\n\nTotal: $${total.toFixed(
+      2
+    )}`
+  );
+
+  const numeroWhatsApp = "5491123034989";
+  window.location.href = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+}
+
+// Eventos
+btnFinalizarCompra.addEventListener("click", finalizarCompra);
 
 /*--->> evento de los botones  <<---*/
 function buscarCarrito() {
@@ -108,6 +154,7 @@ function agregar(id) {
   actualizarLocalStorage();
   buscarCarrito();
   actualizarCantidadCarrito();
+  mostrarTotal();
 }
 
 function quitar(id) {
@@ -126,7 +173,11 @@ function quitar(id) {
 
   actualizarCarrito();
   actualizarCantidadCarrito();
+  mostrarTotal();
 }
+
+mostrarTotal();
+
 function crearCard(data) {
   const card = document.createElement("div");
   card.classList.add("card1");

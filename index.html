@@ -65,34 +65,46 @@
     </div>
 
     <div class="mobile-car disabled" id="mobile-car">
-      <div class="mobile-carrito_header">
-        <h2 class="header-logo">ANGAVA</h2>
-        <button class="close-car" id="close-car">
-          <i class="bi bi-x"></i>
-        </button>
-      </div>
+      <div class="mobile-car-contenedor">
+        <div class="mobile-carrito_header">
+          <h2 class="header-logo">ANGAVA</h2>
+          <button class="close-car" id="close-car" onclick="abrirBtnCarrito()">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
 
-      <div class="mobile-carrito_contenedor" id="mobile-carrito-contenedor">
-        <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
+        <div class="mobile-carrito_contenedor" id="mobile-carrito-contenedor">
+          <!--ACA IRA CARD'S CREADA DINAMICAMENTE-->
+        </div>
+
+        <div id="mobile-carrito-total" class="mobile-carrito-total">
+          <p>Total Final: $<span id="total-precio">0.00</span></p>
+        </div>
+
+        <button id="finalizar-compra" class="btn btn-success">
+          Finalizar Compra
+        </button>
       </div>
     </div>
 
-    <div class="floating-button-buy">
-      <button
-        class="carrito-menu"
-        id="carrito-flotante"
-        onclick="buscarCarrito()">
-        <i class="bi bi-cart3"></i>
-        <p class="cantidad-carrito"></p>
-      </button>
-    </div>
-
-    <div class="floating-button-up">
-      <a href="#hero" class="a-button-up">
-        <button class="button-up" id="button-up">
-          <i class="bi bi-chevron-double-up"></i>
+    <div class="floating-button" id="floating-button">
+      <div class="floating-button-buy" id="floating-button-buy">
+        <button
+          class="carrito-menu"
+          id="carrito-flotante"
+          onclick="buscarCarrito(),cerrarBtnCarrito()">
+          <i class="bi bi-cart3"></i>
+          <p class="cantidad-carrito"></p>
         </button>
-      </a>
+      </div>
+
+      <div class="floating-button-up">
+        <a href="#hero" class="a-button-up">
+          <button class="button-up" id="button-up">
+            <i class="bi bi-chevron-double-up"></i>
+          </button>
+        </a>
+      </div>
     </div>
 
     <main>
@@ -209,8 +221,6 @@
         </div>
       </footer>
     </main>
-
-    
 
     <script src="./main.js"></script>
   </body>
