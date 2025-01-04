@@ -125,7 +125,7 @@ button {
   background-color: var(--gray);
   position: fixed;
   inset: 0;
-  padding: 8px;
+ padding: 16px 32px;
 }
 
 .mobile-car-contenedor{
@@ -139,7 +139,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 16px;
+
 }
 
 
@@ -148,7 +148,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 16px;
+  padding: 8px 16px;
   max-height: 480px;
   overflow-y: auto;
   background-color: var(--white);
