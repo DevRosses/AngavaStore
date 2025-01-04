@@ -38,29 +38,30 @@
     </div>
 
     <div class="mobile-menu disabled" id="mobile-menu">
-      <div class="mobile-menu_header">
-        <h2 class="header-logo">ANGAVA</h2>
-        <button class="close-menu" id="close-menu">
-          <i class="bi bi-x"></i>
-        </button>
-      </div>
+      <div class="mobile-menu-container">
+        <div class="mobile-menu_header">
+          <button class="close-menu" id="close-menu">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
 
-      <nav class="mobile-menu-nav">
-        <ul class="nav_links">
-          <li class="nav_items">
-            <a class="nav_link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav_items">
-            <a class="nav_link" href="#productos">Productos</a>
-          </li>
-          <li class="nav_items">
-            <a class="nav_link" href="#reseñas">Reseñas</a>
-          </li>
-          <li class="nav_items">
-            <a class="nav_link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </nav>
+        <nav class="mobile-menu-nav">
+          <ul class="nav_links">
+            <li class="nav_items" onclick="cerrarMenu()">
+              <a class="nav_link" id="nav_link" href="#inicio">Inicio</a>
+            </li>
+            <li class="nav_items" onclick="cerrarMenu()">
+              <a class="nav_link" href="#productos">Productos</a>
+            </li>
+            <li class="nav_items" onclick="cerrarMenu()">
+              <a class="nav_link" href="#reseñas">Reseñas</a>
+            </li>
+            <li class="nav_items" onclick="cerrarMenu()">
+              <a class="nav_link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </div>
 
     <div class="mobile-car disabled" id="mobile-car">
@@ -77,14 +78,17 @@
     </div>
 
     <div class="floating-button-buy">
-      <button class="carrito-menu" id="carrito-flotante" onclick="buscarCarrito()">
+      <button
+        class="carrito-menu"
+        id="carrito-flotante"
+        onclick="buscarCarrito()">
         <i class="bi bi-cart3"></i>
         <p class="cantidad-carrito"></p>
       </button>
     </div>
 
     <div class="floating-button-up">
-      <a href="#hero">
+      <a href="#hero" class="a-button-up">
         <button class="button-up" id="button-up">
           <i class="bi bi-chevron-double-up"></i>
         </button>
@@ -93,20 +97,22 @@
 
     <main>
       <section class="inicio" id="inicio">
-        <img
-          class="imagen_logo"
-          src="./imagenes/ANGAVA_logo_no_background.png"
-          alt="Imagen de logo" />
+        <div class="inicio-contenedor">
+          <img
+            class="imagen-logo"
+            src="./imagenes/ANGAVA_logo_no_background.png"
+            alt="Imagen de logo" />
 
-        <div class="inicio_info">
-          <h2>DESCUBRE NUESTRA COLECCIÓN</h2>
-          <p>
-            diseño y piezas únicas creadas artesanalmente para adaptarse a
-            cualquier estilo. Combinando la calidez de la madera con la
-            durabilidad del hierro. Minimalista y moderno resalta la belleza de
-            la simplicidad, permitiendo que cada mueble se convierta en el punto
-            focal de cualquier espacio.
-          </p>
+          <div class="inicio-info">
+            <h2>DESCUBRE NUESTRA COLECCIÓN</h2>
+            <p>
+              diseño y piezas únicas creadas artesanalmente para adaptarse a
+              cualquier estilo. Combinando la calidez de la madera con la
+              durabilidad del hierro. Minimalista y moderno resalta la belleza
+              de la simplicidad, permitiendo que cada mueble se convierta en el
+              punto focal de cualquier espacio.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -119,74 +125,77 @@
       </section>
 
       <section class="reseñas" id="reseñas">
-        <div class="review_grid">
+        <div class="reseñas-contenedor">
           <h2>Nuetras reseñas</h2>
-          <div class="review">
-            <h2>Laura R</h2>
-            <p>
-              “La mesa de centro Kyoto es simplemente hermosa. Encaja
-              perfectamente con el estilo de mi sala, y la calidad es
-              excepcional. ¡Amé el detalle artesanal!”
-            </p>
-          </div>
 
-          <div class="review">
-            <h2>Diego M.</h2>
-            <p>
-              “Compré la estantería Zen y no podría estar más satisfecho. La
-              estructura es sólida y el diseño minimalista es justo lo que
-              necesitaba para mi oficina.”
-            </p>
+          <div class="review-grid">
+            <div class="review">
+              <h2>Laura R</h2>
+              <p>
+                “La mesa de centro Kyoto es simplemente hermosa. Encaja
+                perfectamente con el estilo de mi sala, y la calidad es
+                excepcional. ¡Amé el detalle artesanal!”
+              </p>
+            </div>
+            <div class="review">
+              <h2>Diego M.</h2>
+              <p>
+                “Compré la estantería Zen y no podría estar más satisfecho. La
+                estructura es sólida y el diseño minimalista es justo lo que
+                necesitaba para mi oficina.”
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <section class="contacto" id="contacto">
-        <div class="textos_contacto">
-          <h2>¿Tienes Preguntas o Necesitas Ayuda?</h2>
-          <p>
-            Nos encantaría saber de ti. Si tienes preguntas sobre nuestros
-            muebles, pedidos personalizados, o deseas conocer más sobre nuestros
-            procesos de fabricación, completa el formulario a continuación.
-            ¡Estamos aquí para ayudarte!
-          </p>
+        <div class="contacto-contenedor">
+          <div class="contacto-texto">
+            <h2>¿Tienes Preguntas o Necesitas Ayuda?</h2>
+            <p>
+              Nos encantaría saber de ti. Si tienes preguntas sobre nuestros
+              muebles, pedidos personalizados, o deseas conocer más sobre
+              nuestros procesos de fabricación, completa el formulario a
+              continuación. ¡Estamos aquí para ayudarte!
+            </p>
+          </div>
+          <form action="https://formspree.io/f/tu-url" method="POST">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Nombre"
+              autocomplete="name" />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="Mail"
+              autocomplete="email" />
+
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Dejanos un mensaje"></textarea>
+
+            <button class="btn btn-primary submit" type="submit">Enviar</button>
+          </form>
         </div>
-        <form action="https://formspree.io/f/tu-url" method="POST">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            required
-            placeholder="Nombre"
-            autocomplete="name" />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="Mail"
-            autocomplete="email" />
-
-          <textarea
-            id="message"
-            name="message"
-            required
-            placeholder="Dejanos un mensaje"></textarea>
-
-          <button type="submit">Enviar</button>
-        </form>
       </section>
 
       <footer class="footer">
         <div class="logo-menu">
-          <h2 class="logo">ANGAVA</h2>
-
-          <div class="footer-texto">
-            <p>
-              Diseñamos y creamos muebles únicos en hierro y madera,pensados
-              para transformar tus espacios.
-            </p>
-          </div>
+          <h2 class="logo-footer">ANGAVA</h2>
+        </div>
+        <div class="footer-texto">
+          <p>
+            Diseñamos y creamos muebles únicos en hierro y madera,pensados para
+            transformar tus espacios.
+          </p>
         </div>
 
         <div class="footer-icons">
@@ -200,6 +209,8 @@
         </div>
       </footer>
     </main>
+
+    
 
     <script src="./main.js"></script>
   </body>

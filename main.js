@@ -12,6 +12,8 @@ let MenuCar = document.getElementById("mobile-car");
 
 let carritoFlotante = document.getElementById("carrito-flotante");
 
+
+
 btnOpenMenu.addEventListener("click", () => {
   menu.classList.remove("disabled");
 });
@@ -40,6 +42,9 @@ var carrito = [];
 const carritoGuardado = localStorage.getItem("carrito");
 carrito = carritoGuardado ? JSON.parse(carritoGuardado) : [];
 
+function cerrarMenu() {
+  menu.classList.add("disabled");
+}
 /*--->> actualizar el localStorage <<---*/
 function actualizarLocalStorage() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
